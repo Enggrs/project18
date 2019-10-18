@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  body{
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background:url('giphy.gif');
+    font-family: sans-serif;
+    
+ 
+  }
+  .box
+  {
+    position: relative;
+    width: 350px;
+    height: 400px;
+  
+
+  }
+  .box .content
+  {
+    position: absolute;
+    top: 7%;
+    left:7%;
+    right:7%;
+    bottom:7%;
+    background: #000;
+    padding: 20px;
+    overflow: hidden;
+    text-align: center;
+    border: 2px solid #fff;
+    border-radius: 40px;
+
+  }
+  .box .content::before
+  {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: -60%;
+    width: 100%;
+    height: 100%;
+    background: rgba(64, 199, 132, 0.1);
+    transition: .5s;
+    pointer-events: none;
+  }
+  .box:hover .content::before
+  {
+    left: 50%;
+  }
+  .box .content h1
+  {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+  }
+  .box .content p
+  {
+    margin: 0 0 10px;
+    padding: 0;
+    color: #fff;
+  }
+  .box span
+  {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+   
+  }
+  .box span:before
+  {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 2px;
+  background: #0f0;
+ transform-origin: right;
+ transition: 0.5s;
+ border-radius: 40px;
+
+  }
+  .box:hover span:before
+  {
+  transform:scaleX(0);
+  }
+  .box span:nth-child(even)::before
+  {
+  transform-origin: right;
+  transition-delay: 0.5s;
+  }
+  .box span:nth-child(1)
+  {
+    transform: rotate(0deg);
+  }
+  .box span:nth-child(2)
+  {
+    transform: rotate(90deg);
+  }
+  .box span:nth-child(3)
+  {
+    transform: rotate(180deg);
+  }
+  .box span:nth-child(4)
+  {
+    transform: rotate(270deg);
+  }
+</style>
+<body>
+  
+  <div class="box">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <div class="content">
+      <h1>hover</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+         Perspiciatis ipsa consequatur nulla natus, voluptate temporibus et ea ab! Tempore, blanditiis.
+
+      </p>
+    </div>
+  </div>
+</body>
+</html>
